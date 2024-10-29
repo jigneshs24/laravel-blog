@@ -4,37 +4,39 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
-    use AuthenticatesUsers;
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function login(Request $request)
     {
-        $this->middleware('guest')->except('logout');
+        if ($request->isMethod('post')) {
+            $request->validate([
+                'username' => 'required|string',
+                'password' => 'required|string',
+            ]);
+
+            if (!$admin =  User::where('email',$request->username)->orWhere('username',$request->username) ->first())
+                return  redirect()->back()->with(['error' => 'user not found']);
+
+            if (!Hash::check($request->password,$admin->password))
+                return  redirect()->back()->with(['error' => 'invalid password']);
+
+            session(['admin' => $admin]);
+            return redirect()->route('admin-dashboard');
+        }
+
+        return view('admin.login');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect('login');
     }
 }

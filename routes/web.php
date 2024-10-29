@@ -15,6 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['namespace' => 'Auth'], function () {
+
+    Route::match(['get', 'post'], 'register', 'RegisterController@register')->name('register');
+
+    Route::match(['get', 'post'], 'login', 'LoginController@login')->name('login');
+    Route::get('logout', 'LoginController@logout')->name('logout');
+
+});
+
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
     Route::get('dashboard', 'DashboardController@index')->name('admin-dashboard');
