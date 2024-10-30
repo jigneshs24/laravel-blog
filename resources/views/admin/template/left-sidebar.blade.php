@@ -18,7 +18,6 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
-        <!-- Dashboard -->
         <li class="menu-item active">
             <a href="{{ route('admin-dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -26,9 +25,45 @@
             </a>
         </li>
 
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Pages</span>
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Blog Content</span></li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Form Elements">Blogs</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="forms-basic-inputs.html" class="menu-link">
+                        <div data-i18n="Basic Inputs">View</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="forms-input-groups.html" class="menu-link">
+                        <div data-i18n="Input groups">Create</div>
+                    </a>
+                </li>
+            </ul>
         </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Form Layouts">Category</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="form-layouts-vertical.html" class="menu-link">
+                        <div data-i18n="Vertical Form">View</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="form-layouts-horizontal.html" class="menu-link">
+                        <div data-i18n="Horizontal Form">Create</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Pages</span></li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
@@ -56,47 +91,6 @@
                 <li class="menu-item">
                     <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
                         <div data-i18n="Basic">Forgot Password</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-
-        <!-- Forms & Tables -->
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Blog Content</span>
-        </li>
-        <!-- Forms -->
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Elements">Blogs</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="forms-basic-inputs.html" class="menu-link">
-                        <div data-i18n="Basic Inputs">View</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="forms-input-groups.html" class="menu-link">
-                        <div data-i18n="Input groups">Create</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Layouts">Category</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="form-layouts-vertical.html" class="menu-link">
-                        <div data-i18n="Vertical Form">Vertical Form</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="form-layouts-horizontal.html" class="menu-link">
-                        <div data-i18n="Horizontal Form">Horizontal Form</div>
                     </a>
                 </li>
             </ul>
