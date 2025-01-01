@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $user = User::all()->first();
+        $user = \App\Models\User::all()->first();
 
         return view('admin.dashboard', [
             'user' => $user

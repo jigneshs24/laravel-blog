@@ -31,4 +31,25 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::group(['prefix' => 'admin', 'middleware' => 'admin.auth'], function () {
         Route::get('dashboard', 'DashboardController@index')->name('admin-dashboard');
     });
+
+    Route::group(['prefix' => 'blog'], function () {
+
+        Route::group(['prefix' => 'category'], function () {
+
+            Route::get('/', 'BlogCategoryController@index')->name('admin-blog-category-view');
+            Route::post('/', 'BlogCategoryController@store')->name('admin-blog-category-view');
+//            Route::get('update/{id}', 'BlogCategoryController@update')->name('admin-blog-category-update');
+//            Route::post('update/{id}', 'BlogCategoryController@update')->name('admin-blog-category-update');
+
+        });
+
+        Route::get('/', 'BlogController@index')->name('admin-blog-view');
+
+//        Route::get('create', 'BlogController@create')->name('admin-blog-create');
+//        Route::post('create', 'BlogController@create')->name('admin-blog-create');
+//
+//        Route::get('update/{id}', 'BlogController@update')->name('admin-blog-update');
+//        Route::post('update/{id}', 'BlogController@update')->name('admin-blog-update');
+
+    });
 });

@@ -43,7 +43,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <span class="fw-semibold d-block">{{ $user->username }}</span>
+                                    <span class="fw-semibold d-block">test</span>
                                     <small class="text-muted">Admin</small>
                                 </div>
                             </div>

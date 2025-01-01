@@ -51,13 +51,8 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="form-layouts-vertical.html" class="menu-link">
-                        <div data-i18n="Vertical Form">View</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="form-layouts-horizontal.html" class="menu-link">
-                        <div data-i18n="Horizontal Form">Create</div>
+                    <a href="{{ route('admin-blog-category-view') }}" class="menu-link">
+                        View
                     </a>
                 </li>
             </ul>

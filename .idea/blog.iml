@@ -93,6 +93,13 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/facade/ignition-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/facade/ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sofa/eloquence-mappable" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sofa/eloquence-metable" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sofa/eloquence" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sofa/eloquence-mutable" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sofa/eloquence-base" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sofa/eloquence-validable" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sofa/hookable" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

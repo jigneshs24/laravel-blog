@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
-    <title>@yield('title') - {{ config('project.company') }}</title>
+    <title>@yield('title') - Blogs By Jigz</title>
     <meta name="description" content=""/>
     <link rel="icon" type="image/x-icon" href="../admin-assets/img/favicon/favicon.ico"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -35,7 +35,7 @@
 <body>
 <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
-        @include('admin.template.left-sidebar')
+        @include('admin.template.sidebar')
         <div class="layout-page">
             @include('admin.template.header')
             <div class="content-wrapper">
