@@ -13,7 +13,7 @@ class BlogCategoryController extends Controller
 
         $categories = BlogCategory::latest()->paginate(30);
 
-        return view('admin.category.view', [
+        return view('admin.blog.category.view', [
             'categories' => $categories
         ]);
     }

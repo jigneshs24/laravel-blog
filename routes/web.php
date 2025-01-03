@@ -38,6 +38,7 @@ Route::group(['namespace' => 'Admin'], function () {
 
             Route::get('/', 'BlogCategoryController@index')->name('admin-blog-category-view');
             Route::post('/', 'BlogCategoryController@store')->name('admin-blog-category-view');
+            Route::delete('/admin/categories/{id}', 'BlogCategoryController@destroy')->name('admin-blog-category-delete');
 //            Route::get('update/{id}', 'BlogCategoryController@update')->name('admin-blog-category-update');
 //            Route::post('update/{id}', 'BlogCategoryController@update')->name('admin-blog-category-update');
 
@@ -45,11 +46,11 @@ Route::group(['namespace' => 'Admin'], function () {
 
         Route::get('/', 'BlogController@index')->name('admin-blog-view');
 
-//        Route::get('create', 'BlogController@create')->name('admin-blog-create');
-//        Route::post('create', 'BlogController@create')->name('admin-blog-create');
-//
-//        Route::get('update/{id}', 'BlogController@update')->name('admin-blog-update');
-//        Route::post('update/{id}', 'BlogController@update')->name('admin-blog-update');
+        Route::get('create', 'BlogController@create')->name('admin-blog-create');
+        Route::post('create', 'BlogController@create')->name('admin-blog-create');
+
+        Route::get('update/{id}', 'BlogController@update')->name('admin-blog-update');
+        Route::post('update/{id}', 'BlogController@update')->name('admin-blog-update');
 
     });
 });
