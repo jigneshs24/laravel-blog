@@ -37,11 +37,6 @@
                         <div data-i18n="Basic Inputs">View</div>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="{{ route('admin-blog-create') }}" class="menu-link">
-                        <div data-i18n="Input groups">Create</div>
-                    </a>
-                </li>
             </ul>
         </li>
         <li class="menu-item">

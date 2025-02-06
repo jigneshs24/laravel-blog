@@ -69,7 +69,8 @@
                                  aria-labelledby="editCategoryModalLabel-{{ $category->id }}" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                        <form action="" method="POST">
+                                        <form action="{{ route('admin-blog-category-update', $category->id) }}"
+                                              method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $category->id }}">
                                             <div class="modal-header">

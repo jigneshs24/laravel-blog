@@ -12,10 +12,7 @@
 
             <!-- Create Blog Button -->
             <div class="d-flex justify-content-end mb-3">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#createBlogModal">
-                    Create Blog
-                </button>
+                <a href="{{ route('admin-blog-create') }}" class="btn btn-primary">Create Blog</a>
             </div>
 
             <!-- Basic Bootstrap Table -->
@@ -51,19 +48,73 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('admin-blog-update', ['id' => $blog->id]) }}"
-                                           class="btn btn-info btn-sm">Edit</a>
+                                        <button class="btn btn-info btn-sm" data-bs-toggle="modal"
+                                                data-bs-target="#editBlogModal-{{ $blog->id }}">
+                                            <i class="bx bx-edit-alt me-1"></i> Edit
+                                        </button>
                                         <button class="btn btn-danger btn-sm" onclick="deleteBlog({{ $blog->id }})">
                                             Delete
                                         </button>
-                                        <form id="delete-form-{{ $blog->id }}"
-                                              action="{{ route('admin-blog-delete', $blog->id) }}" method="POST"
-                                              style="display: none;">
-                                            @csrf
-                                            @method('DELETE')
-                                        </form>
                                     </td>
                                 </tr>
+                                <div class="modal fade" id="editBlogModal-{{ $blog->id }}" tabindex="-1"
+                                     aria-labelledby="editBlogModalLabel-{{ $blog->id }}" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form action="{{ route('admin-blog-update', $blog->id) }}" method="post"
+                                                  enctype="multipart/form-data">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{ $blog->id }}">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="editBlogModalLabel-{{ $blog->id }}">Edit
+                                                        Blog</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Title<span
+                                                                class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control" name="title"
+                                                               value="{{ $blog->title }}" required>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label>Short Description<span
+                                                                class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control" name="short_description"
+                                                               value="{{ $blog->short_description }}" required>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Content<span
+                                                                class="text-danger">*</span></label>
+                                                        <textarea name="description" class="summernote form-control"
+                                                                  cols="30" rows="5"
+                                                                  required>{{ $blog->description }}</textarea>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Status</label>
+                                                        <select class="form-control" name="status" required>
+                                                            <option
+                                                                value="1" {{ $blog->status == 1 ? 'selected' : '' }}>
+                                                                Active
+                                                            </option>
+                                                            <option
+                                                                value="2" {{ $blog->status == 2 ? 'selected' : '' }}>
+                                                                In-Active
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Close
+                                                    </button>
+                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                             </tbody>
                         </table>
